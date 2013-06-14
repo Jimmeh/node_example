@@ -2,7 +2,7 @@ module.exports = function(server, done) {
 	
 	var passport;
 	require('./userstore')(function(store) {
-		require('./passport_config')(store, function(pass) {
+		require('./local-passport')(store, function(pass) {
 			passport = pass;
 			server.use(passport.initialize());
 			registerRoutes();
